@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", monospace;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+  color: #00ff00;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#desktop {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-shadow: 0 0 10px #00ff00;
+  margin-bottom: 50px;
+}
+
+#icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.icon {
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid #00ff00;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+  font-size: 1.2em;
+}
+
+.icon:hover {
+  background: rgba(0, 255, 0, 0.3);
+  box-shadow: 0 0 10px #00ff00;
+}
+
+/* Winbox custom styles */
+.winbox {
+  background: #1a1a2e !important;
+  border: 1px solid #00ff00 !important;
+  color: #00ff00 !important;
+}
+
+.winbox .wb-body {
+  background: #0f0f23 !important;
+  color: #00ff00 !important;
+}
+
+.winbox .wb-header {
+  background: #2a2a4e !important;
+  color: #00ff00 !important;
+}

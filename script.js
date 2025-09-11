@@ -55,3 +55,42 @@ function openContact() {
     y: 150,
   });
 }
+
+function openTerminal() {
+  const terminalContent = `
+    <h2>Terminal</h2>
+    <p style="font-family: monospace; background: black; color: lime; padding: 10px; height: 200px; overflow-y: auto;">
+      $ echo "Welcome to QuantumByte's Terminal"<br>
+      Welcome to QuantumByte's Terminal<br>
+      $ ls -la<br>
+      total 0<br>
+      drwxr-xr-x  5 user  staff  160 Apr 27 12:00 .<br>
+      drwxr-xr-x  3 user  staff   96 Apr 27 11:59 ..<br>
+      -rw-r--r--  1 user  staff    0 Apr 27 12:00 secret.txt<br>
+    </p>
+  `;
+
+  new WinBox({
+    title: "Terminal",
+    html: terminalContent,
+    width: 500,
+    height: 300,
+    x: 200,
+    y: 200,
+  });
+}
+
+function openStartMenu() {
+  alert("Start menu clicked! This can be expanded with more functionality.");
+}
+
+// Clock update
+function updateClock() {
+  const clock = document.getElementById("clock");
+  if (!clock) return;
+  const now = new Date();
+  clock.textContent = now.toLocaleTimeString();
+}
+
+setInterval(updateClock, 1000);
+updateClock();

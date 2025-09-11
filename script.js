@@ -1,7 +1,7 @@
 function openAbout() {
   const aboutContent = `
-    <h2>About @QuantumByte(Hacker)</h2>
-    <p>Welcome to my digital realm. I am @QuantumByte(Hacker), a passionate cybersecurity enthusiast and ethical hacker.</p>
+    <h2>About @QuantumByte</h2>
+    <p>Welcome to my digital realm. I am @QuantumByte, a passionate cybersecurity enthusiast and ethical hacker.</p>
     <p>Specializing in penetration testing, vulnerability assessment, and secure coding practices.</p>
     <p>Always learning, always exploring the depths of the digital world.</p>
   `;
@@ -42,9 +42,7 @@ function openContact() {
   const contactContent = `
     <h2>Get In Touch</h2>
     <p>Email: quantumbyte@hacker.com</p>
-    <p>GitHub: <a href="https://github.com/QuantumByte" target="_blank">@QuantumByte</a></p>
-    <p>Twitter: <a href="https://twitter.com/QuantumByteHacker" target="_blank">@QuantumByteHacker</a></p>
-    <p>Discord: QuantumByte#1337</p>
+    <p>GitHub: <a href="https://github.com/Hardrivetech" target="_blank">@QuantumByte</a></p>
     <p>Let's connect and discuss cybersecurity, coding, or any tech topics!</p>
   `;
 

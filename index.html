@@ -8,7 +8,19 @@
     <script src="https://cdn.jsdelivr.net/npm/winbox@0.2.82/dist/winbox.bundle.min.js"></script>
   </head>
   <body>
-    <div id="desktop">
+    <div id="login-overlay">
+      <div id="login-form">
+        <h2>Access Granted?</h2>
+        <p style="font-size: 0.9em; margin-bottom: 20px">
+          Username: quantumbyte<br />Password: hacker
+        </p>
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button onclick="login()">Login</button>
+        <div id="login-error"></div>
+      </div>
+    </div>
+    <div id="desktop" style="display: none">
       <div id="icons">
         <div class="icon" onclick="openAbout()">About</div>
         <div class="icon" onclick="openProjects()">Projects</div>
@@ -16,7 +28,7 @@
         <div class="icon" onclick="openTerminal()">Terminal</div>
       </div>
     </div>
-    <div id="taskbar">
+    <div id="taskbar" style="display: none">
       <button id="start-menu" onclick="openStartMenu()">Start</button>
       <div id="clock"></div>
     </div>

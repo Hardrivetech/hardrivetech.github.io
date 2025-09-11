@@ -2,9 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Ubuntu", sans-serif;
-  background: url("https://source.unsplash.com/1920x1080/?linux,desktop")
-    no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
   color: #ffffff;
   height: 100vh;
   overflow: hidden;
@@ -21,27 +19,74 @@ body {
 
 #icons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 20px;
-  max-width: 600px;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 30px;
+  max-width: 400px;
+  margin: 50px auto 0;
 }
 
 .icon {
+  width: 80px;
+  height: 80px;
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #ffffff;
   text-align: center;
-  font-size: 0.9em;
   backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .icon:hover {
   background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.icon:hover::before {
+  opacity: 1;
+}
+
+.icon:nth-child(1) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.icon:nth-child(2) {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.icon:nth-child(3) {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.icon:nth-child(4) {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
 }
 
 #taskbar {
@@ -78,32 +123,97 @@ body {
   font-size: 0.9em;
 }
 
-/* Winbox custom styles - Linux window theme */
+/* Winbox custom styles - Hacker theme */
 .winbox {
-  background: #f5f5f5 !important;
-  border: 1px solid #ccc !important;
+  background: #0f0f23 !important;
+  border: 1px solid #00ff00 !important;
   border-radius: 8px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.3) !important;
 }
 
 .winbox .wb-body {
-  background: #ffffff !important;
-  color: #333 !important;
+  background: #000000 !important;
+  color: #00ff00 !important;
   padding: 10px !important;
+  font-family: "Courier New", monospace !important;
 }
 
 .winbox .wb-header {
-  background: linear-gradient(to right, #e0e0e0, #f0f0f0) !important;
-  color: #333 !important;
-  border-bottom: 1px solid #ccc !important;
+  background: linear-gradient(to right, #1a1a2e, #2a2a4e) !important;
+  color: #00ff00 !important;
+  border-bottom: 1px solid #00ff00 !important;
   border-radius: 8px 8px 0 0 !important;
 }
 
 .winbox .wb-control {
-  background: #f0f0f0 !important;
-  border: 1px solid #ccc !important;
+  background: #1a1a2e !important;
+  border: 1px solid #00ff00 !important;
+  color: #00ff00 !important;
 }
 
 .winbox .wb-control:hover {
-  background: #e0e0e0 !important;
+  background: #2a2a4e !important;
+}
+
+/* Login overlay */
+#login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#login-form {
+  background: #1a1a2e;
+  border: 1px solid #00ff00;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px #00ff00;
+}
+
+#login-form h2 {
+  color: #00ff00;
+  margin-bottom: 20px;
+  font-family: "Courier New", monospace;
+}
+
+#login-form input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  background: #0f0f23;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  border-radius: 5px;
+}
+
+#login-form button {
+  background: #00ff00;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+
+#login-form button:hover {
+  background: #00cc00;
+}
+
+#login-error {
+  color: #ff0000;
+  margin-top: 10px;
+  font-family: "Courier New", monospace;
 }

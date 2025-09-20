@@ -15,7 +15,7 @@
 
   // Configuration
   const config = {
-    siteId: 'YOUR_SITE_ID', // Replace with actual site ID from VeloWeb dashboard
+    siteId: '4', // Replace with actual site ID from VeloWeb dashboard
     apiEndpoint: 'https://veloweb.pages.dev/api', // Replace with your actual domain
     collectPerformance: true,
     collectAnalytics: true,
@@ -253,3 +253,4 @@
   window.veloWebTracker.trackPageView = analyticsTracker.trackPageView;
 
 })();
+
